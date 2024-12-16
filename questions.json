@@ -230,7 +230,187 @@
         "explanation": "ANSWER: A \n MTTR (Mean Time to Respond) measures the average time taken to investigate and close an alert or incident, whether it is valid or a false positive. In the context of a Risk Notable Event in Splunk Enterprise Security, MTTR would represent the time elapsed between the creation of the alert and the analyst resolving it (e.g., determining it is a false positive or taking appropriate action). \n\n Why the others are incorrect: \n B. MTBF (Mean Time Between Failures): Used in reliability engineering to measure the average time between system or component failures, not applicable to alert handling. \n C. MTTA (Mean Time to Acknowledge): Measures the time taken to acknowledge an alert, not to resolve it. \n D. MTTD (Mean Time to Detect): Refers to the time taken to detect an issue or anomaly, which occurs before the alert is created."
     },
     {
-        "question": "",
+        "question": "An analyst needs to create a new field at search time. Which Splunk command will dynamically extract additional fields as part of a Search pipeline?",
+        "answers": [
+          { "text": "rex", "correct": true },
+          { "text": "fields", "correct": false },
+          { "text": "regex", "correct": false },
+          { "text": "eval", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n The rex command in Splunk is used to dynamically extract fields from raw event data at search time using regular expressions. It allows analysts to define patterns for extracting data into new fields as part of a search pipeline. This is particularly useful when the desired field is not pre-indexed or explicitly defined in the source data."
+    },
+    {
+        "question": "Which of the following is considered Personal Data under GDPR?",
+        "answers": [
+          { "text": "The birth date of an unidentified user.", "correct": false },
+          { "text": "An individual’s address including their first and last name.", "correct": true },
+          { "text": "An individual’s address including their first and last name.", "correct": false },
+          { "text": "A company’s registration number.", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n Under the General Data Protection Regulation (GDPR), Personal Data is defined as any information relating to an identified or identifiable natural person. An individual's address combined with their first and last name qualifies as personal data because it can directly identify the person."
+    },
+    {
+        "question": "What goal of an Advanced Persistent Threat (APT) group aims to disrupt or damage on behalf of a cause?",
+        "answers": [
+          { "text": "Hacktivism", "correct": true },
+          { "text": "Cyber espionage", "correct": false },
+          { "text": "Financial gain", "correct": false },
+          { "text": "Prestige", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n Hacktivism refers to cyber activities conducted by threat actors with the goal of disrupting or damaging systems, often as a form of protest or to advance a specific cause or ideology. Advanced Persistent Threat (APT) groups engaging in hacktivism typically aim to make a political, social, or ideological statement through their actions."
+    },
+    {
+        "question": "A Cyber Threat Intelligence (CTI) team produces a report detailing a specific threat actor’s typical behaviors and intent. This would be an example of what type of intelligence?",
+        "answers": [
+          { "text": "Operational", "correct": false },
+          { "text": "Executive", "correct": false },
+          { "text": "Tactical", "correct": false },
+          { "text": "Strategic", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n A report detailing a specific threat actor's typical behaviors and intent represents Strategic Intelligence, which focuses on the overarching goals, motivations, and long-term behaviors of threat actors. This type of intelligence is intended to provide high-level insights to inform decision-makers about potential threats and their implications for an organization."
+    },
+    {
+        "question": "An organization is using Risk-Based Alerting (RBA). During the past few days, a user account generated multiple risk observations. Splunk refers to this account as what type of entity?",
+        "answers": [
+          { "text": "Risk Factor", "correct": false },
+          { "text": "Risk Index", "correct": false },
+          { "text": "Risk Analysis", "correct": false },
+          { "text": "Risk Object", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In Splunk's Risk-Based Alerting (RBA) framework, a Risk Object refers to the entity (such as a user account, host, or IP address) that is associated with risk observations or events. In this case, the user account that generated multiple risk observations is identified as the Risk Object. Risk scores are aggregated for Risk Objects to help prioritize investigations and identify high-risk entities within an organization."
+    },
+    {
+        "question": "When searching in Splunk, which of the following SPL commands can be used to run a subsearch across every field in a wildcard field list?",
+        "answers": [
+          { "text": "foreach", "correct": true },
+          { "text": "rex", "correct": false },
+          { "text": "makeresults", "correct": false },
+          { "text": "transaction", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n The foreach command in Splunk allows you to iterate over a list of fields (such as a wildcard field list) and apply a specified operation to each field. This is useful when you need to perform actions, like running subsearches, transformations, or calculations, across all fields that match a certain pattern or wildcard."
+    },
+    {
+        "question": "How are Notable Events configured in Splunk Enterprise Security?",
+        "answers": [
+          { "text": "During an investigation.", "correct": false },
+          { "text": "As part of an audit.", "correct": false },
+          { "text": "Via an Adaptive Response Action in a regular search.", "correct": false },
+          { "text": "Via an Adaptive Response Action in a correlation search.", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In Splunk Enterprise Security, Notable Events are configured through Adaptive Response Actions within correlation searches. When setting up a correlation search, you can define specific criteria and configure the search to trigger a Notable Event when those criteria are met. This process allows security analysts to automatically generate alerts (Notable Events) based on patterns, anomalies, or suspicious activity detected in the environment."
+    },
+    {
+        "question": "An analyst is investigating a network alert for suspected lateral movement from one Windows host to another Windows host. According to Splunk CIM documentation, the IP address of the host from which the attacker is moving would be in which field?",
+        "answers": [
+          { "text": "host", "correct": false },
+          { "text": "dest", "correct": false },
+          { "text": "src_nt_host", "correct": false },
+          { "text": "src_ip", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n According to Splunk's Common Information Model (CIM) documentation, the src_ip field represents the IP address of the source host, which, in this case, would be the host from which the attacker is moving during suspected lateral movement."
+    },
+    {
+        "question": "Which of the following data sources can be used to discover unusual communication within an organization’s network?",
+        "answers": [
+          { "text": "EDS", "correct": false },
+          { "text": "NetFlow", "correct": true },
+          { "text": "Email", "correct": false },
+          { "text": "IAM", "correct": false }
+        ],
+        "explanation": "ANSWER: B \n NetFlow is a network protocol that collects and analyzes metadata about network traffic, such as source and destination IPs, ports, protocols, and traffic volumes. By analyzing NetFlow data, unusual or anomalous communication patterns within an organization's network can be identified, such as unexpected connections between internal hosts or communication with suspicious external IP addresses"
+    },
+    {
+        "question": "When threat hunting for outliers in Splunk, which of the following SPL pipelines would filter for users with over a thousand occurrences?",
+        "answers": [
+          { "text": "| sort by user | where count > 1000", "correct": false },
+          { "text": "| stats count by user | where count > 1000 | sort - count", "correct": true },
+          { "text": "| top user", "correct": false },
+          { "text": "| stats count(user) | sort - count | where count > 1000", "correct": false }
+        ],
+        "explanation": "ANSWER: B \n This SPL pipeline filters for users with more than 1,000 occurrences, making it suitable for threat hunting to identify outliers: \n 1.`stats count by user`:** Counts the number of occurrences for each user. \n 2.`where count > 1000`: Filters the results to include only users with a count greater than 1,000. \n 3.`sort - count`: Sorts the filtered results in descending order by the count for easier review of the most frequent outliers."
+    },
+    {
+        "question": "The United States Department of Defense (DoD) requires all government contractors to provide adequate security safeguards referenced in National Institute of Standards and Technology (NIST) 800-171. All DoD contractors must continually reassess, monitor, and track complianceto be able to do business with the US government. Which feature of Splunk Enterprise Security provides an analyst context for the correlation search mapping to the specific NIST guidelines?",
+        "answers": [
+          { "text": "Comments", "correct": false },
+          { "text": "Notes", "correct": false },
+          { "text": "Annotations", "correct": true },
+          { "text": "Framework mapping", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n In Splunk Enterprise Security, Annotations provide context by mapping correlation searches to specific guidelines, standards, or frameworks such as NIST 800-171. Annotations help analysts understand how a specific correlation search aligns with regulatory requirements or security frameworks, enabling them to track compliance and address gaps more effectively."
+    },
+    {
+        "question": "An analyst is investigating the number of failed login attempts by IP address. Which SPL command can be used to create a temporary table containing the number of failed login attempts by IP address over a specific time period?",
+        "answers": [
+          { "text": "index=security_logs eventtype=failed_login | eval count as failed_attempts by src_ip | sort -failed_attempts", "correct": false },
+          { "text": "index=security_logs eventtype=failed_login | transaction count as failed_attempts by src_ip | sort -failed_attempts", "correct": false },
+          { "text": "index=security_logs eventtype=failed_login | stats count as failed_attempts by src_ip | sort -failed_attempts", "correct": true },
+          { "text": "index=security_logs eventtype=failed_login | sum count as failed_attempts by src_ip | sort -failed_attempts", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n "
+    },
+    {
+        "question": "The field file_acl contains access controls associated with files affected by an event. In which data model would an analyst find this field?",
+        "answers": [
+          { "text": "Malware", "correct": false },
+          { "text": "Alerts", "correct": false },
+          { "text": "Vulnerabilities", "correct": false },
+          { "text": "Endpoint", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n The file_acl field, which contains access controls associated with files, is part of the Endpoint data model in Splunk Enterprise Security. The Endpoint data model is designed to capture and standardize information about file system activities, process activities, and other endpoint-related events, including file access controls. This makes it the appropriate data model for events involving file access permissions or changes."
+    },
+    {
+        "question": "A threat hunter generates a report containing the list of users who have logged in to a particular database during the last 6 months, along with the number of times they have each authenticated. They sort this list and remove any user names who have logged in more than 6 times. The remaining names represent the users who rarely log in, as their activity is more suspicious. The hunter examines each of these rare logins in detail. This is an example of what type of threat-hunting technique?",
+        "answers": [
+          { "text": "Least Frequency of Occurrence Analysis", "correct": true },
+          { "text": "Co-Occurrence Analysis", "correct": false },
+          { "text": "Time Series Analysis", "correct": false },
+          { "text": "Outlier Frequency Analysis", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n This is an example of Least Frequency of Occurrence Analysis, a threat-hunting technique that focuses on identifying entities (e.g., users, IPs, devices) that appear less frequently in a dataset. By removing users who logged in more than six times, the hunter isolates those with rare login activity, which may indicate anomalous or suspicious behavior requiring closer examination. This approach is particularly useful in detecting potential insider threats or compromised accounts."
+    },
+    {
+        "question": "What is the main difference between hypothesis-driven and data-driven Threat Hunting?",
+        "answers": [
+          { "text": "Data-driven hunts always require more data to search through than hypothesis-driven hunts.", "correct": false },
+          { "text": "Data-driven hunting tries to uncover activity within an existing data set, hypothesis-driven hunting begins with a potential activity that the hunter thinks may be happening.", "correct": true },
+          { "text": "Hypothesis-driven hunts are typically executed on newly ingested data sources, while data-driven hunts are not.", "correct": false },
+          { "text": "Hypothesis-driven hunting tries to uncover activity within an existing data set, data-driven hunting begins with an activity that the hunter thinks may be happening.", "correct": false }
+        ],
+        "explanation": "ANSWER: B \n "
+    },
+    {
+        "question": "The Security Operations Center (SOC) manager is interested in creating a new dashboard for typosquatting after a successful campaign against a group of senior executives. Which existing ES dashboard could be used as a starting point to create a custom dashboard?",
+        "answers": [
+          { "text": "IAM Activity", "correct": false },
+          { "text": "Malware Center", "correct": false },
+          { "text": "Access Anomalies", "correct": false },
+          { "text": "New Domain Analysis", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n The New Domain Analysis dashboard in Splunk Enterprise Security is a suitable starting point for creating a custom dashboard for typosquatting detection. Typosquatting often involves registering domains that are visually similar to legitimate domains, and the New Domain Analysis dashboard focuses on identifying unusual or newly observed domains that could be used in phishing or impersonation attacks. This aligns well with the SOC manager's objective of analyzing typosquatting activity."
+    },
+    {
+        "question": "What is the main difference between a DDoS and a DoS attack?",
+        "answers": [
+          { "text": "A DDoS attack is a type of physical attack, while a DoS attack is a type of cyberattack.", "correct": false },
+          { "text": "A DDoS attack uses a single source to target a single system, while a DoS attack uses multiple sources to target multiple systems.", "correct": false },
+          { "text": "A DDoS attack uses multiple sources to target a single system, while a DoS attack uses a single source to target a single or multiple systems.", "correct": true },
+          { "text": "A DDoS attack uses a single source to target multiple systems, while a DoS attack uses multiple sources to target a single system", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n "
+    },
+    {
+        "question": "A Cyber Threat Intelligence (CTI) team delivers a briefing to the CISO detailing their view of the threat landscape the organization faces. This is an example of what type of Threat Intelligence?",
+        "answers": [
+          { "text": "Tactical", "correct": false },
+          { "text": "Strategic", "correct": true },
+          { "text": "Operational", "correct": false },
+          { "text": "Executive", "correct": false }
+        ],
+        "explanation": "ANSWER: B \n A briefing delivered to the Chief Information Security Officer (CISO) detailing the threat landscape focuses on high-level insights about risks, adversary motives, and trends in the cybersecurity environment. This aligns with Strategic Threat Intelligence, which provides long-term, big-picture analysis to support decision-making and align security strategies with the organization's goals."
+    },
+    {
+        "question": "Template",
         "answers": [
           { "text": "", "correct": true },
           { "text": "", "correct": false },
