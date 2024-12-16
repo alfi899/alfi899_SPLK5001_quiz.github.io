@@ -1,0 +1,243 @@
+[
+    {
+        "question": "Which enterprise Security framework provides a mechanism for running preconfigured actions within the Splunk platform or integrating with external applications?",
+        "answers": [
+          { "text": "Asset and Identity", "correct": false },
+          { "text": "Notable Events", "correct": false },
+          { "text": "Threat Intelligence", "correct": false },
+          { "text": "Adaptive Response", "correct": true }
+        ],
+        "explanation": "ANSWER: D. Adaptive Response \n The Adaptive Response frameowrk allows for the execution of preconfigured actions, eiother within Splunk ot by integrating with external applications and tools. It enabled security teams to automate and streamline their responses to sercurity incidents, suich as quarantainging hosts, disabling accounts or notifying relevant personnel"
+    },
+    {
+        "question": "Which of the following Splunk enterprise features allows industry frameworks such as CIS Critical Security Controls, MITTRE ATT&CK and the Lockhead Martin Cyber Kill Chain top be mapped to correlation search results?",
+        "answers": [
+          { "text": "Annotations", "correct": true },
+          { "text": "Playbooks", "correct": false },
+          { "text": "Comments", "correct": false },
+          { "text": "Enrichments", "correct": false }
+        ],
+        "explanation": "ANSWER: A. Annotations \n Annotations allow users to map correlation serach results to established industry frameworks. This mapping enables organizations to align their security monitoring and detection with recognized best practices and methodologies, providing valuable contect for security events and supporting standardized reporting and analysis."
+    },
+    {
+        "question": "Which of the following is the primary benefit of using the CIM in Splunk?",
+        "answers": [
+          { "text": "It allows for easier correlation of data from different sources", "correct": true },
+          { "text": "It improves the performance of search queries on raw data.", "correct": false },
+          { "text": "It enables the use of advanced machine learning algorithms.", "correct": false },
+          { "text": "It automatically detects and blocks cyber threats.", "correct": false }
+        ],
+        "explanation": "ANSWER: A. It allows for easier correlation of data from different sources \n The Commaon Information Model (CIM) in Splunk provides a standardized model that normaliuzed data from various sources into a consistent structure.  This eneables easier correlation of data from different sources, as fields and event types are mapped to common formats. The CIM is essential for improving the usability and effectiveness of security and operational use cases in Splunk"
+    },
+    {
+        "question": "Tactics, Techniques, and Procedures (TTPs) are methods or behaviors utilized by attackers. In which framework are these categorized?",
+        "answers": [
+          { "text": "NIST 800-53", "correct": false },
+          { "text": "ISO 27000", "correct": false },
+          { "text": "CIS18", "correct": false },
+          { "text": "MITRE ATT&CK", "correct": true }
+        ],
+        "explanation": "ANSWER: D. MITRE ATT&CK \n The MITRE ATT&CK framework categorizes Tactics, Techniques, and Procedures (TTPs) used by attackers. This framework provides a comprehensive matrix of attacker behaviors, detailing how adversaries accomplish various goals (Tactics), the specific methods they use (Techniques), and how these actions are executed (Procedures). It is widely used for threat intelligence, detection, and response in cybersecurity."
+    },
+    {
+        "question": "A threat hunter executed a hunt based on the following hypothesis: As an actor, I want to plant rundll32 for proxy execution of malicious code and leverage Cobalt Strike for Command and Control. Relevant logs and artifacts such as Sysmon, netflow, IDS alerts, and EDR logs were searched, and the hunter is confident in the conclusion that Cobalt Strike is not present in the company’s environment. Which of the following best describes the outcome of this threat hunt?",
+        "answers": [
+          { "text": "The threat hunt was successful because the hypothesis was not proven.", "correct": false },
+          { "text": "The threat hunt failed because the hypothesis was not proven.", "correct": false },
+          { "text": "The threat hunt failed because no malicious activity was identified.", "correct": false },
+          { "text": "The threat hunt was successful in providing strong evidence that the tactic and tool is not present in the environmen", "correct": true }
+        ],
+        "explanation": "ANSWER: D. The threat hunt was successful in providing strong evidence that the tactic and tool is not present in the environmen \n  A threat hunt is considered successful when it provides actionable insights or strong evidence about the presence or absence of malicious activity or tools. In this case, the hunter's investigation into the hypothesis that Cobalt Strike and rundll32 were used for malicious activity resulted in conclusive evidence that these were not present in the environment. This outcome supports a secure posture and validates the effectiveness of detection capabilities, which is a successful result for the hunt."
+    },
+    {
+        "question": "An analyst notices that one of their servers is sending an unusually large amount of traffic, gigabytes more than normal, to a single system on the Internet. There doesn’t seem to be any associated increase in incoming traffic. What type of threat actor activity might this represent?",
+        "answers": [
+          { "text": "Data exfiltration", "correct": true },
+          { "text": "Network reconnaissance", "correct": false },
+          { "text": "Data infiltration", "correct": false },
+          { "text": "Lateral movement", "correct": false }
+        ],
+        "explanation": "ANSWER: A. Data exfiltration \n  The behavior described—where a server is sending an unusually large amount of outgoing traffic to a single external system without a corresponding increase in incoming traffic—is characteristic of data exfiltration. This occurs when an attacker extracts sensitive data or files from a network to an external destination. The lack of incoming traffic suggests that the activity is focused on sending data out, rather than typical bi-directional communication, reconnaissance, or lateral movement."
+    },
+    {
+        "question": "In which phase of the Continuous Monitoring cycle are suggestions and improvements typically made?",
+        "answers": [
+          { "text": "Define and Predict", "correct": false },
+          { "text": "Establish and Architect", "correct": false },
+          { "text": "Analyze and Report", "correct": true },
+          { "text": "Implement and Collect", "correct": false }
+        ],
+        "explanation": "ANSWER: C. Analyze and Report \n In the Analyze and Report phase of the Continuous Monitoring cycle, data collected from monitoring activities is analyzed to identify security issues, trends, and gaps. During this phase, insights from the analysis are used to generate reports, which often include suggestions and improvements for mitigating risks, addressing vulnerabilities, and enhancing the overall security posture. This feedback loop is critical for ensuring the continuous improvement of monitoring processes and security strategies."
+    },
+    {
+        "question": "An analyst is not sure that all of the potential data sources at her company are being correctly or completely utilized by Splunk and Enterprise Security. Which of the following might she suggest using, in order to perform an analysis of the data types available and some of their potential security uses?",
+        "answers": [
+          { "text": "Splunk ITSI", "correct": false },
+          { "text": "Splunk Security Essentials", "correct": true },
+          { "text": "Splunk SOAR", "correct": false },
+          { "text": "Splunk Intelligence Management", "correct": false }
+        ],
+        "explanation": "ANSWER: B. Splunk Security Essentials \n Splunk Security Essentials is a free application that helps analysts and security teams explore the data sources available in their environment and understand their potential security use cases. It provides guidance on how to make better use of data, mapping it to specific security frameworks and best practices. Analysts can use it to analyze data types and their potential for security monitoring, correlation and detection within Splunk Enterprise Security."
+    },
+    {
+        "question": "During their shift, an analyst receives an alert about an executable being run from C:\\Windows\\Temp. Why should this be investigated further?",
+        "answers": [
+          { "text": "Temp directories aren’t owned by any particular user, making it difficult to track the process owner when files are executed.", "correct": false },
+          { "text": "Temp directories are flagged as non-executable, meaning that no files stored within can be executed, and this executable was run from that directory", "correct": false },
+          { "text": "Temp directories contain the system page file and the virtual memory file, meaning the attacker can use their malware to read the in memory values of running programs", "correct": false },
+          { "text": "Temp directories are world writable thus allowing attackers a place to drop, stage, and execute malware on a system without needing to worry about file permissions", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n The C:\\Windows\\Temp directory is commonly used as a staging area by attackers because it is world writable, meaning any user can write files to it. This makes it an ideal location for dropping, staging, and executing malicious files without needing elevated permissions. Executables running from such directories are suspicious and warrant investigation, as legitimate processes typically do not execute from these locations. This behavior often indicates potential malware activity or unauthorized actions."
+    },
+    {
+        "question": "An analyst would like to visualize threat objects across their environment and chronological risk events for a Risk Object in Incident Review. Where would they find this?",
+        "answers": [
+          { "text": "Running the Risk Analysis Adaptive Response action within the Notable Event.", "correct": false },
+          { "text": "Via a workflow action for the Risk Investigation dashboard.", "correct": false },
+          { "text": "Via the Risk Analysis dashboard under the Security Intelligence tab in Enterprise Security.", "correct": false },
+          { "text": "Clicking the risk event count to open the Risk Event Timeline", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In Splunk Enterprise Security, an analyst can visualize threat objects and the chronological risk events associated with a Risk Object by clicking the risk event count within Incident Review. This action opens the Risk Event Timeline, providing a detailed, time-ordered view of risk events related to the specific object, helping the analyst to better understand the context and progression of risk within the environment."
+    },
+    {
+        "question": "A Risk Rule generates events on Suspicious Cloud Share Activity and regularly contributes to confirmed incidents from Risk Notables. An analyst realizes the raw logs these events are generated from contain information which helps them determine what might be malicious. What should they ask their engineer for to make their analysis easier?",
+        "answers": [
+          { "text": "Create a field extraction for this information.", "correct": false },
+          { "text": "Add this information to the risk_message.", "correct": false },
+          { "text": "Create another detection for this information.", "correct": false },
+          { "text": "Allowlist more events based on this information.", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In Splunk Enterprise Security, an analyst can visualize threat objects and the chronological risk events associated with a Risk Object by clicking the risk event count within Incident Review. This action opens the Risk Event Timeline, providing a detailed, time-ordered view of risk events related to the specific object, helping the analyst to better understand the context and progression of risk within the environment."
+    },
+    {
+        "question": "A Risk Rule generates events on Suspicious Cloud Share Activity and regularly contributes to confirmed incidents from Risk Notables. An analyst realizes the raw logs these events are generated from contain information which helps them determine what might be malicious. What should they ask their engineer for to make their analysis easier?",
+        "answers": [
+          { "text": "Create a field extraction for this information.", "correct": true },
+          { "text": "Add this information to the risk_message.", "correct": false },
+          { "text": "Create another detection for this information.", "correct": false },
+          { "text": "Allowlist more events based on this information.", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n The risk_message field in Splunk's Risk-Based Alerting framework provides context about why a risk score was assigned to an object or event. By asking the engineer to include additional information from the raw logs in the risk_message, the analyst can have easier access to the relevant data needed to determine whether the activity is malicious, without having to repeatedly search through the raw logs. This improves the efficiency and effectiveness of their analysis."
+    },
+    {
+        "question": "What device typically sits at a network perimeter to detect command and control and other potentially suspicious traffic?",
+        "answers": [
+          { "text": "Host-based firewall", "correct": false },
+          { "text": "Web proxy", "correct": false },
+          { "text": "Endpoint Detection and Response", "correct": false },
+          { "text": "Intrusion Detection System", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n An Intrusion Detection System (IDS) typically sits at the network perimeter or other key points within a network to monitor and analyze traffic for potentially suspicious activities, such as command and control (C2) traffic, unauthorized access, or other signs of malicious behavior. An IDS inspects network packets and generates alerts for detected threats, providing visibility into anomalous or potentially harmful traffic entering or leaving the network."
+    },
+    {
+        "question": "Upon investigating a report of a web server becoming unavailable, the security analyst finds that the web server’s access log has the same log entry millions of times: 147.186.119.200 - - [28/Jul/2023:12:04:13 -0300] 'GET /login/ HTTP/1.0' 200 3733 \n What kind of attack is occurring?",
+        "answers": [
+          { "text": "Denial of Service Attack", "correct": true },
+          { "text": "Distributed Denial of Service Attack", "correct": false },
+          { "text": "Cross-Site Scripting Attack", "correct": false },
+          { "text": "Database Injection Attack", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n The repeated identical log entry suggests that a single IP address (147.186.119.200) is sending a high volume of requests (GET /login/ HTTP/1.0) to the web server. This overwhelming traffic causes the server to become unavailable, which is characteristic of a Denial of Service (DoS) Attack. Unlike a Distributed Denial of Service (DDoS) Attack, which involves multiple sources, this attack appears to come from a single source, as evidenced by the same IP address repeatedly logged"
+    },
+    {
+        "question": "According to David Bianco's Pyramid of Pain, which indicator type is least effective when used in continuous monitoring?",
+        "answers": [
+          { "text": "Domain names", "correct": false },
+          { "text": "TTPs", "correct": false },
+          { "text": "Network/Host artifacts", "correct": false },
+          { "text": "Hash values", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In David Bianco's Pyramid of Pain, hash values are considered the least effective indicator type for continuous monitoring because they are easy for adversaries to change. A minor modification to a file or payload alters its hash, rendering the indicator ineffective for detecting similar threats. On the other hand, indicators like Tactics, Techniques, and Procedures (TTPs) are at the top of the pyramid and are much harder for adversaries to modify, making them more effective for threat detection and response."
+    },
+    {
+        "question": "An analysis of an organization’s security posture determined that a particular asset is at risk and a new process or solution should be implemented to protect it. Typically, who would be in charge of implementing the new process or solution that was selected?",
+        "answers": [
+          { "text": "Security Architect", "correct": false },
+          { "text": "SOC Manager", "correct": false },
+          { "text": "Security Engineer", "correct": true },
+          { "text": "Security Analyst", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n The Security Engineer is typically responsible for implementing new processes or solutions to protect assets in an organization. Their role involves deploying, configuring, and maintaining security technologies, as well as ensuring that these solutions integrate effectively with the organization's infrastructure. While other roles (e.g., Security Architect or SOC Manager) may be involved in designing the strategy or overseeing operations, the hands-on implementation of selected security measures is primarily the responsibility of the Security Engineer."
+    },
+    {
+        "question": "Which of the following is a correct Splunk search that will return results in the most performant way?",
+        "answers": [
+          { "text": "index=foo host=i-478619733 | stats range(_time) as duration by src_ip | bin duration span=5min | stats count by duration, host", "correct": true },
+          { "text": " | stats range(_time) as duration by src_ip | index=foo host=i-478619733 | bin duration span=5min | stats count by duration, host", "correct": false },
+          { "text": "index=foo host=i-478619733 | transaction src_ip |stats count by host", "correct": false },
+          { "text": "index=foo | transaction src_ip |stats count by host | search host=i-478619733", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n *This search is the most performant because:\n 1.Index-time filtering: The search starts with `index=foo` and `host=i-478619733`, which applies index-time constraints. This reduces the dataset as early as possible, which is crucial for performance. Filtering at the beginning ensures that Splunk only retrieves relevant events from storage.\n 2.Efficient use of commands: The `stats` command is computationally efficient and is used here instead of more resource-intensive commands like `transaction`. The `transaction` command is known to be heavy on resources and should be avoided unless absolutely necessary.\n 3.Logical flow: The sequence of commands (`stats`, `bin`, `stats`) processes the data in a logical and efficient manner. By binning and summarizing data before further aggregation, it minimizes intermediate data size and computational overhead \n \n \n Why the other options are less efficient:* \n B: Starts with `stats` before filtering with `index=foo`, which means Splunk processes the entire dataset unnecessarily before applying the index constraint. \n C and D: Both use `transaction`, which is resource-intensive and should be avoided for performance reasons when `stats` can achieve the same outcome. Additionally, D applies filtering (`host=i-478619733`) after the `transaction` and other processing, making it less efficient."
+    },
+    {
+        "question": "There are many resources for assisting with SPL and configuration questions. Which of the following resources feature community-sourced answers?",
+        "answers": [
+          { "text": "Splunk Answers", "correct": true },
+          { "text": "Splunk Lantern", "correct": false },
+          { "text": "Splunk Guidebook", "correct": false },
+          { "text": "Splunk Documentation", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n Splunk Answers is a community-driven platform where Splunk users, partners, and employees contribute by answering questions about SPL (Search Processing Language), configurations, troubleshooting, and other topics. It allows users to tap into the collective knowledge and experiences of the Splunk community. \n\n Why the others are incorrect: \n B. Splunk Lantern: Provides best practices, use case guidance, and pre-written searches, but it is curated by Splunk and not community-sourced. \n C. Splunk Guidebook: Does not exist as an official resource. \n D. Splunk Documentation: Official product documentation written and maintained by Splunk, not community-sourced."
+    },
+    {
+        "question": "A successful Continuous Monitoring initiative involves the entire organization. When an analyst discovers the need for more context or additional information, perhaps from additional data sources or altered correlation rules, to what role would this request generally escalate?",
+        "answers": [
+          { "text": "SOC Manager", "correct": false },
+          { "text": "Security Analyst", "correct": false },
+          { "text": "Security Engineer", "correct": true },
+          { "text": "Security Architect", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n  When an analyst identifies the need for additional context, new data sources, or changes to correlation rules, the request is typically escalated to the Security Engineer. The Security Engineer is responsible for managing and configuring the security tools and ensuring the appropriate data sources are integrated into the monitoring environment. They handle tasks such as onboarding new logs, refining correlation rules, and ensuring the system is optimized to provide the required context for analysis. \n \n Role Clarifications: \n SOC Manager: Oversees the Security Operations Center (SOC) and focuses on staffing, processes, and high-level strategy, not technical configurations. \n Security Analyst: Typically responsible for investigating alerts and incidents, but they escalate technical changes or data integrations to the Security Engineer. \n Security Architect: Designs the overall security strategy and infrastructure but is not typically involved in day-to-day changes to monitoring or tooling configurations."
+    },
+    {
+        "question": "Splunk Enterprise Security has numerous frameworks to create correlations, integrate threat intelligence, and provide a workflow for investigations. Which framework raises the threat profile of individuals or assets to allow identification of people or devices that perform an unusual amount of suspicious activities?",
+        "answers": [
+          { "text": "Threat Intelligence Framework", "correct": false },
+          { "text": "Risk Framework", "correct": true },
+          { "text": "Notable Event Framework", "correct": false },
+          { "text": "Asset and Identity Framework", "correct": false }
+        ],
+        "explanation": "ANSWER: B \n The Risk Framework in Splunk Enterprise Security is used to raise the threat profile of individuals or assets by assigning risk scores based on their behavior and activities. It aggregates risk events and calculates risk scores to highlight entities (e.g., users, devices, or IPs) that exhibit unusual or suspicious behavior. This enables analysts to prioritize investigations by identifying high-risk individuals or assets that require further scrutiny."
+    },
+    {
+        "question": "While the top command is utilized to find the most common values contained within a field, a Cyber Defense Analyst hunts for anomalies. Which of the following Splunk commands returns the least common values?",
+        "answers": [
+          { "text": "least", "correct": false },
+          { "text": "uncommon", "correct": false },
+          { "text": "rare", "correct": true },
+          { "text": "base", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n In Splunk, the rare command is used to identify the least common values in a field, making it valuable for anomaly detection. It is the counterpart to the top command, which identifies the most common values. By using rare, a Cyber Defense Analyst can focus on unusual or infrequent patterns that may indicate anomalies or suspicious activities in the data."
+    },
+    {
+        "question": "The Lockheed Martin Cyber Kill Chain breaks an attack lifecycle into several stages. A threat actor modified the registry on a compromised Windows system to ensure that their malware would automatically run at boot time. Into which phase of the Kill Chain would this fall?",
+        "answers": [
+          { "text": "Act on Objectives", "correct": false },
+          { "text": "Exploitation", "correct": false },
+          { "text": "Delivery", "correct": false },
+          { "text": "Installation", "correct": true }
+        ],
+        "explanation": "ANSWER: D \n In the Lockheed Martin Cyber Kill Chain, the Installation phase involves the attacker establishing persistence on the compromised system. Modifying the Windows registry to ensure malware runs automatically at boot time is a classic example of a persistence mechanism, which is a key activity in the Installation phase. This step ensures that the malware remains active even after a system reboot or user logoff, enabling the attacker to maintain control of the system."
+    },
+    {
+        "question": "A Risk Notable Event has been triggered in Splunk Enterprise Security, an analyst investigates the alert, and determines it is a false positive. What metric would be used to define the time between alert creation and close of the event?",
+        "answers": [
+          { "text": "MTTR (Mean Time to Respond)", "correct": true },
+          { "text": "MTBF (Mean Time Between Failures)", "correct": false },
+          { "text": "MTTA (Mean Time to Acknowledge)", "correct": false },
+          { "text": "MTTD (Mean Time to Detect)", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n MTTR (Mean Time to Respond) measures the average time taken to investigate and close an alert or incident, whether it is valid or a false positive. In the context of a Risk Notable Event in Splunk Enterprise Security, MTTR would represent the time elapsed between the creation of the alert and the analyst resolving it (e.g., determining it is a false positive or taking appropriate action). \n\n Why the others are incorrect: \n B. MTBF (Mean Time Between Failures): Used in reliability engineering to measure the average time between system or component failures, not applicable to alert handling. \n C. MTTA (Mean Time to Acknowledge): Measures the time taken to acknowledge an alert, not to resolve it. \n D. MTTD (Mean Time to Detect): Refers to the time taken to detect an issue or anomaly, which occurs before the alert is created."
+    },
+    {
+        "question": "",
+        "answers": [
+          { "text": "", "correct": true },
+          { "text": "", "correct": false },
+          { "text": "", "correct": false },
+          { "text": "", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n "
+    }
+  ]
+  
