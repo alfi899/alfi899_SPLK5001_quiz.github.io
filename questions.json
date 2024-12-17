@@ -403,7 +403,7 @@
         "question": "An analyst is examining the logs for a web application’s login form. They see thousands of failed logon attempts using various usernames and passwords. Internet research indicates that these credentials may have been compiled by combining account information from several recent data breaches. Which type of attack would this be an example of?",
         "answers": [
           { "text": "Credential sniffing", "correct": false },
-          { "text": "Credential sniffing", "correct": false },
+          { "text": "Credential cracking", "correct": false },
           { "text": "Password spraying", "correct": false },
           { "text": "Credential stuffing", "correct": true }
         ],
