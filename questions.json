@@ -103,17 +103,7 @@
         "question": "A Risk Rule generates events on Suspicious Cloud Share Activity and regularly contributes to confirmed incidents from Risk Notables. An analyst realizes the raw logs these events are generated from contain information which helps them determine what might be malicious. What should they ask their engineer for to make their analysis easier?",
         "answers": [
           { "text": "Create a field extraction for this information.", "correct": false },
-          { "text": "Add this information to the risk_message.", "correct": false },
-          { "text": "Create another detection for this information.", "correct": false },
-          { "text": "Allowlist more events based on this information.", "correct": true }
-        ],
-        "explanation": "ANSWER: D \n In Splunk Enterprise Security, an analyst can visualize threat objects and the chronological risk events associated with a Risk Object by clicking the risk event count within Incident Review. This action opens the Risk Event Timeline, providing a detailed, time-ordered view of risk events related to the specific object, helping the analyst to better understand the context and progression of risk within the environment."
-    },
-    {
-        "question": "A Risk Rule generates events on Suspicious Cloud Share Activity and regularly contributes to confirmed incidents from Risk Notables. An analyst realizes the raw logs these events are generated from contain information which helps them determine what might be malicious. What should they ask their engineer for to make their analysis easier?",
-        "answers": [
-          { "text": "Create a field extraction for this information.", "correct": true },
-          { "text": "Add this information to the risk_message.", "correct": false },
+          { "text": "Add this information to the risk_message.", "correct": true },
           { "text": "Create another detection for this information.", "correct": false },
           { "text": "Allowlist more events based on this information.", "correct": false }
         ],
@@ -244,7 +234,7 @@
         "answers": [
           { "text": "The birth date of an unidentified user.", "correct": false },
           { "text": "An individual’s address including their first and last name.", "correct": true },
-          { "text": "An individual’s address including their first and last name.", "correct": false },
+          { "text": "The name of a deceased individual.", "correct": false },
           { "text": "A company’s registration number.", "correct": false }
         ],
         "explanation": "ANSWER: C \n Under the General Data Protection Regulation (GDPR), Personal Data is defined as any information relating to an identified or identifiable natural person. An individual's address combined with their first and last name qualifies as personal data because it can directly identify the person."
@@ -410,14 +400,254 @@
         "explanation": "ANSWER: B \n A briefing delivered to the Chief Information Security Officer (CISO) detailing the threat landscape focuses on high-level insights about risks, adversary motives, and trends in the cybersecurity environment. This aligns with Strategic Threat Intelligence, which provides long-term, big-picture analysis to support decision-making and align security strategies with the organization's goals."
     },
     {
-        "question": "Template",
+        "question": "An analyst is examining the logs for a web application’s login form. They see thousands of failed logon attempts using various usernames and passwords. Internet research indicates that these credentials may have been compiled by combining account information from several recent data breaches. Which type of attack would this be an example of?",
         "answers": [
-          { "text": "", "correct": true },
-          { "text": "", "correct": false },
-          { "text": "", "correct": false },
-          { "text": "", "correct": false }
+          { "text": "Credential sniffing", "correct": false },
+          { "text": "Credential sniffing", "correct": false },
+          { "text": "Password spraying", "correct": false },
+          { "text": "Credential stuffing", "correct": true }
         ],
-        "explanation": "ANSWER: A \n "
+        "explanation": "ANSWER: D \n Credential stuffing is an attack where previously stolen usernames and passwords from data breaches are used in bulk to attempt unauthorized logins on a system. Attackers rely on users reusing passwords across multiple services. The analyst's observation of thousands of failed login attempts using various combinations of usernames and passwords aligns with this type of attack."
+    },
+    {
+        "question": "An analysis of an organization’s security posture determined that a particular asset is at risk and a new process or solution should be implemented to protect it. Typically, who would be in charge of designing the new process and selecting the required tools to implement it?",
+        "answers": [
+          { "text": "SOC Manager", "correct": false },
+          { "text": "Security Engineer", "correct": false },
+          { "text": "Security Architect", "correct": true },
+          { "text": "Security Analyst", "correct": false }
+        ],
+        "explanation": "ANSWER: C \n The Security Architect is responsible for designing security processes and selecting tools to address risks to an organization’s assets. This role focuses on creating comprehensive security strategies and ensuring that chosen solutions align with the organization's overall security goals and architecture. Security Architects bridge the gap between identifying risks and implementing solutions."
+    },
+    {
+      "question": "After discovering some events that were missed in an initial investigation, an analyst determines this is because some events have an empty src field. Instead, the required data is often captured in another field called machine_name. What SPL could they use to find all relevant events across either field until the field extraction is fixed?",
+      "answers": [
+        { "text": "| eval src = coalesce(src,machine_name)", "correct": true },
+        { "text": "| eval src = src + machine_name", "correct": false },
+        { "text": "| eval src = src . machine_name", "correct": false },
+        { "text": "| eval src = tostring(machine_name)", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n The coalesce function in Splunk is used to return the first non-empty value from a list of fields. By using eval src = coalesce(src, machine_name), the analyst ensures that the src field is populated with its original value if present, or the value from machine_name if src is empty. This approach effectively consolidates the data for the analysis while waiting for the field extraction issue to be fixed"
+    },
+    {
+      "question": "An analyst would like to test how certain Splunk SPL commands work against a small set of data. What command should start the search pipeline if they wanted to create their own data instead of utilizing data contained within Splunk?",
+      "answers": [
+        { "text": "makeresults", "correct": true },
+        { "text": "rename", "correct": false },
+        { "text": "eval", "correct": false },
+        { "text": "stats", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n The makeresults command in Splunk is used to create a single, empty event that can be populated with custom fields and values. It is particularly useful for testing and experimenting with SPL commands without relying on existing data in Splunk. Analysts can use makeresults to simulate data and build out or test SPL queries in a controlled environment."
+    },
+    {
+      "question": "What is the following step-by-step description an example of?\n 1.The attacker devises a non-default beacon profile with Cobalt Strike and embeds this within a document.\n 2.The attacker creates a unique email with the malicious document based on extensive research about their target.\n 3.When the victim opens this document, a C2 channel is established to the attacker’s temporary infrastructure on a compromised website.",
+      "answers": [
+        { "text": "Tactic", "correct": false },
+        { "text": "Policy", "correct": false },
+        { "text": "Procedure", "correct": false },
+        { "text": "Technique", "correct": true }
+      ],
+      "explanation": "ANSWER: D \n The described step-by-step example outlines a Technique, which refers to a specific method or way that attackers achieve a particular objective during an attack. In this case, the example demonstrates a specific method of establishing a Command and Control (C2) channel using Cobalt Strike through a malicious document sent via email. This is consistent with the definition of a Technique in frameworks like MITRE ATT&CK."
+    },
+    {
+      "question": "Which of the following is a best practice when creating performant searches within Splunk?",
+      "answers": [
+        { "text": "Utilize the transaction command to aggregate data for faster analysis.", "correct": false },
+        { "text": "Utilize Aggregating commands to ensure all data is available prior to Streaming commands.", "correct": false },
+        { "text": "Utilize specific fields to return only the data that is required.", "correct": true },
+        { "text": "Utilize multiple wildcards across fields to ensure returned data is complete and available.", "correct": false }
+      ],
+      "explanation": "ANSWER: C \n Using specific fields in Splunk searches ensures that only the necessary data is returned, reducing the amount of data processed and significantly improving search performance. This best practice minimizes resource consumption and enhances the speed of searches."
+    },
+    {
+      "question": "Which pre-packaged app delivers security content and detections on a regular, ongoing basis for Enterprise Security and SOAR?",
+      "answers": [
+        { "text": "SSE", "correct": false },
+        { "text": "ESCU", "correct": true },
+        { "text": "Threat Hunting", "correct": false },
+        { "text": "InfoSec", "correct": false }
+      ],
+      "explanation": "ANSWER: B \n ESCU (Enterprise Security Content Update) is a pre-packaged app for Splunk Enterprise Security that provides regularly updated security content, such as detection rules, dashboards, and threat intelligence. ESCU is specifically designed to enhance the capabilities of Enterprise Security (ES) and Splunk SOAR by delivering new detections and content aligned with the latest security threats and attack techniques, including frameworks like MITRE ATT&CK."
+    },
+    {
+      "question": "Which search command allows an analyst to match whatever is inside the parentheses as a single term in the index, even if it contains characters that are usually recognized as minor breakers such as periods or underscores?",
+      "answers": [
+        { "text": "CASE()", "correct": false },
+        { "text": "LIKE()", "correct": false },
+        { "text": "FORMAT()", "correct": false },
+        { "text": "TERM()", "correct": true }
+      ],
+      "explanation": "ANSWER: D \n The TERM() function in Splunk is used to treat whatever is inside the parentheses as a single term, even if it includes special characters like periods (.) or underscores (_). This is particularly useful for searching terms that might otherwise be broken into smaller tokens by Splunk’s default indexing and search behavior"
+    },
+    {
+      "question": "Which field is automatically added to search results when assets are properly defined and enabled in Splunk Enterprise Security?",
+      "answers": [
+        { "text": "asset_category", "correct": false },
+        { "text": "src_ip", "correct": false },
+        { "text": "src_category", "correct": true },
+        { "text": "user", "correct": false }
+      ],
+      "explanation": "ANSWER: C \n In Splunk Enterprise Security, when assets are properly defined and enabled in the Asset and Identity Framework, the src_category field is automatically added to search results. This field categorizes the asset based on its role or purpose within the organization, such as 'web server' or 'database server.' It provides valuable context for analyzing events and prioritizing security investigations"
+    },
+    {
+        "question": "An IDS signature is designed to detect and alert on logins to a certain server, but only if they occur from 6:00 PM - 6:00 AM. If no IDS alerts occur in this window, but the signature is known to be correct, this would be an example of what?",
+        "answers": [
+          { "text": "A True Negative", "correct": true },
+          { "text": "A True Positive", "correct": false },
+          { "text": "A False Negative", "correct": false },
+          { "text": "A False Positive", "correct": false }
+        ],
+        "explanation": "ANSWER: A \n A True Negative occurs when no alert is generated because no suspicious or malicious activity matching the detection criteria has occurred. In this scenario, if no logins to the server occurred between 6:00 PM and 6:00 AM (the time window specified in the IDS signature), the lack of alerts is the correct outcome, making it a True Negative"
+    },
+    {
+      "question": "Which of the following is not a component of the Splunk Security Content library (ESCU, SSE)?",
+      "answers": [
+        { "text": "Dashboards", "correct": false},
+        { "text": "Reports", "correct": false },
+        { "text": "Correlation searches", "correct": false },
+        { "text": "Validated architectures", "correct": true }
+      ],
+      "explanation": "ANSWER: A \n The Splunk Security Content library (provided through apps like ESCU and SSE) includes components such as dashboards, reports, and correlation searches to help security teams detect, investigate, and respond to threats. These components provide practical tools and detections aligned with frameworks like MITRE ATT&CK."
+    },
+    {
+      "question": "The eval SPL expression supports many types of functions. Which of these function categories is not valid with eval?",
+      "answers": [
+        { "text": "JSON functions", "correct": false },
+        { "text": "Text functions", "correct": false },
+        { "text": "Comparison and Conditional functions", "correct": false },
+        { "text": "Threat functions", "correct": true }
+      ],
+      "explanation": "ANSWER: A \n"
+    },
+    {
+      "question": "Which of the following is a tactic used by attackers, rather than a technique?",
+      "answers": [
+        { "text": "Gathering information about a target.", "correct": true },
+        { "text": "Establishing persistence with a scheduled task.", "correct": false },
+        { "text": "Using a phishing email to gain initial access.", "correct": false },
+        { "text": "Escalating privileges via UAC bypass.", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n In cybersecurity frameworks such as MITRE ATT&CK, a tactic represents the goal or objective that an attacker is trying to achieve. Gathering information about a target aligns with the Reconnaissance tactic, where the attacker seeks information about the target environment to plan further actions.\n The other options are examples of techniques, which describe specific ways attackers achieve their goals (tactics):\n B. Establishing persistence with a scheduled task: This is a technique under the Persistence tactic. \n C. Using a phishing email to gain initial access: This is a technique under the Initial Access tactic. \n D. Escalating privileges via UAC bypass: This is a technique under the Privilege Escalation tactic."
+    },
+    {
+      "question": "Which stage of continuous monitoring involves adding data, creating detections, and building drilldowns?",
+      "answers": [
+        { "text": "Implement and Collect", "correct": true },
+        { "text": "Establish and Architect", "correct": false },
+        { "text": "Respond and Review", "correct": false },
+        { "text": "Analyze and Report", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n The Implement and Collect stage of continuous monitoring focuses on gathering relevant data sources, creating detections, and developing drilldowns for further analysis. This phase is crucial for setting up monitoring capabilities, ensuring that the system collects appropriate data, and building detection rules to identify anomalies or potential security threats. \n B. Establish and Architect: This phase focuses on planning and designing the architecture for continuous monitoring, including tools and frameworks. \n C. Respond and Review: This stage involves addressing incidents, reviewing findings, and making improvements based on monitoring results. \n D. Analyze and Report: In this phase, collected data and detections are analyzed, and insights are reported to stakeholders for decision-making."
+    },
+    {
+      "question": "An analyst is investigating how an attacker successfully performs a brute-force attack to gain a foothold into an organizations systems. In the course of the investigation the analyst determines that the reason no alerts were generated is because the detection searches were configured to run against Windows data only and excluding any Linux data. This is an example of what?",
+      "answers": [
+        { "text": "A True Positive", "correct": false },
+        { "text": "A True Negative", "correct": false },
+        { "text": "A False Negative", "correct": true },
+        { "text": "A False Positive", "correct": false }
+      ],
+      "explanation": "ANSWER: D \n A False Negative occurs when a detection mechanism fails to identify and alert on malicious activity that is actually happening. In this case, the brute-force attack was successful, but no alerts were generated because the detection searches were incorrectly configured to exclude Linux data. This misconfiguration resulted in the attack going unnoticed, making it a False Negative. Why the other options are incorrect:\n A. A True Positive: A True Positive is when an alert is correctly generated for malicious activity. In this case, no alert was generated. \n B. A True Negative: A True Negative occurs when there is no malicious activity, and no alert is generated. Here, malicious activity did occur. \n D. A False Positive: A False Positive occurs when an alert is triggered for benign activity. In this case, there was no alert."
+    },
+    {
+      "question": "An analyst investigates an IDS alert and confirms suspicious traffic to a known malicious IP. What Enterprise Security data model would they use to investigate which process initiated the network connection?",
+      "answers": [
+        { "text": "Endpoint", "correct": true },
+        { "text": "Authentication", "correct": false },
+        { "text": "Network traffic", "correct": false },
+        { "text": "Web", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n The Endpoint data model in Splunk Enterprise Security is used to analyze and investigate process activities on endpoints, such as which process initiated a network connection. This data model includes fields related to processes, file operations, and command executions, making it the appropriate choice for determining the process responsible for generating the suspicious traffic."
+    },
+    {
+      "question": "Which of the following is a best practice for searching in Splunk?",
+      "answers": [
+        { "text": "Streaming commands run before aggregating commands in the Search pipeline.", "correct": true },
+        { "text": "Raw word searches should contain multiple wildcards to ensure all edge cases are covered.", "correct": false },
+        { "text": "Limit fields returned from the search utilizing the table command.", "correct": false },
+        { "text": "Searching over All Time ensures that all relevant data is returned.", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n In Splunk, streaming commands (like eval, where, and rex) operate on events as they are streamed from the index. These commands are computationally efficient and should run before aggregating commands (like stats, chart, and timechart), which summarize or group data. Running streaming commands first reduces the amount of data passed to the aggregating commands, improving search performance."
+    },
+    {
+      "question": "While testing the dynamic removal of credit card numbers, an analyst lands on using the rex command. What mode needs to be set to in order to replace the defined values with X? \n | makeresults \n| eval ccnumber='511388720478619733' \n | rex field=ccnumber mode=??? 's/(\\d{4}-){3)/XXXX-XXXX-XXXX-/g' \nPlease assume that the above rex command is correctly written.",
+      "answers": [
+        { "text": "sed", "correct": true },
+        { "text": "replace", "correct": false },
+        { "text": "mask", "correct": false },
+        { "text": "substitute", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n In Splunk, the rex command supports the mode=sed option to perform string replacements or substitutions using a regular expression. This allows you to dynamically modify values, such as replacing parts of a credit card number with X to mask sensitive data. \n Why the other options are incorrect: \n B. replace: Not a valid mode for the rex command. \n C. mask: No such mode exists in the rex command. \n D. substitute: Splunk does not use substitute as a mode for text replacement; sed is the correct syntax for such operations."
+    },
+    {
+      "question": "Which of the following use cases is best suited to be a Splunk SOAR Playbook?",
+      "answers": [
+        { "text": "Forming hypothesis for Threat Hunting", "correct": false },
+        { "text": "Visualizing complex datasets.", "correct": false },
+        { "text": "Creating persistent field extractions", "correct": false },
+        { "text": "Taking containment action on a compromised host", "correct": true }
+      ],
+      "explanation": "ANSWER: D \n Splunk SOAR (Security Orchestration, Automation, and Response) is designed to automate and orchestrate security tasks, such as responding to incidents. Taking containment action on a compromised host (e.g., isolating the host, disabling a user account, or blocking an IP) is a perfect use case for a SOAR Playbook because it automates the response process, reducing manual intervention and speeding up incident mitigation."
+    },
+    {
+      "question": "Which of the following is not considered an Indicator of Compromise (IOC)?",
+      "answers": [
+        { "text": "A specific domain that is utilized for phishing", "correct": false },
+        { "text": "A specific IP address used in a cyberattack.", "correct": false },
+        { "text": "A specific file hash of a malicious executable.", "correct": false },
+        { "text": "A specific password for a compromised account", "correct": true }
+      ],
+      "explanation": "ANSWER: D \n An Indicator of Compromise (IOC) refers to specific artifacts or evidence that indicate a system has been compromised. IOCs include file hashes, malicious IP addresses, domain names, or other observable elements that can signal malicious activity. A specific password for a compromised account is not considered an IOC because it is a credential rather than an artifact of an attack. While compromised passwords are important for incident response, they are generally treated as part of account security and credentials management, not as IOCs."
+    },
+    {
+      "question": "According to Splunk CIM documentation, which field in the Authentication Data Model represents the user who initiated a privilege escalation?",
+      "answers": [
+        { "text": "username", "correct": false },
+        { "text": "src_user_id", "correct": false },
+        { "text": "src_user", "correct": true },
+        { "text": "dest_user", "correct": false }
+      ],
+      "explanation": "ANSWER: C \n According to Splunk's Common Information Model (CIM) documentation, the src_user field in the Authentication Data Model represents the user who initiated an action, such as a privilege escalation. This field captures the originating (source) user account performing the activity."
+    },
+    {
+      "question": "The following list contains examples of Tactics, Techniques, and Procedures (TTPs): \n 1. Exploiting a remote service \n 2. Lateral movement \n 3. Use EternalBlue to exploit a remote SMB server \n In which order are they listed below?",
+      "answers": [
+        { "text": "Tactic, Technique, Procedure", "correct": true },
+        { "text": "Procedure, Technique, Tactic", "correct": false },
+        { "text": "Technique, Tactic, Procedure", "correct": false },
+        { "text": "Tactic, Procedure, Technique", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n ### Explanation: \n 1. **Exploiting a remote service** → This is a **Tactic**, representing the broader goal or objective of the adversary. For example, under MITRE ATT&CK, 'Exploitation for Remote Services' falls under the **Initial Access** or **Execution** tactic. \n 2. **Lateral movement** → This is a **Technique**, as it describes a specific action taken by the adversary to move laterally through a network. It aligns with the **Lateral Movement** tactic in MITRE ATT&CK. \n 3. **Use EternalBlue to exploit a remote SMB server** → This is a **Procedure**, representing the specific implementation of a technique. EternalBlue is a known exploit used to target SMB services to gain access"
+    },
+    {
+      "question": "An analyst is attempting to investigate a Notable Event within Enterprise Security. Through the course of their investigation they determined that the logs and artifacts needed to investigate the alert are not available. What event disposition should the analyst assign to the Notable Event?",
+      "answers": [
+        { "text": "Benign Positive, since there was no evidence that the event actually occurred", "correct": false },
+        { "text": "False Negative, since there are no logs to prove the activity actually occurred.", "correct": false },
+        { "text": "True Positive, since there are no logs to prove that the event did not occur", "correct": false },
+        { "text": "Other, since a security engineer needs to ingest the required logs", "correct": true }
+      ],
+      "explanation": "ANSWER: D \n When logs and artifacts necessary for investigating a Notable Event are missing, it is not possible to conclusively determine whether the event is a True Positive, False Positive, or any other disposition. In this case, the disposition 'Other' is appropriate because the root cause is an operational issue: the required data sources are not available. A follow-up action should be taken to ensure the missing logs are ingested, typically by involving a security engineer. \n ### Why the other options are incorrect: \n - A. Benign Positive:** A **Benign Positive** occurs when an alert is technically correct but does not represent malicious activity. This does not apply here because the logs are missing, and no conclusion can be drawn. \n - B. False Negative:** A **False Negative** occurs when a detection fails to identify malicious activity. This does not apply here, as the alert was generated. \n - C. True Positive:** A **True Positive** requires evidence to confirm the alert is valid. Since the logs are missing, there is no proof of malicious activity."
+    },
+    {
+      "question": "An analyst is looking at Web Server logs, and sees the following entry as the last web request that a server processed before unexpectedly shutting down: 147.186.119.107 - - [28/Jul/2006:10:27:10 -0300] 'POST /cgi-bin/shutdown/ HTTP/1.0' 200 3333 What kind of attack is most likely occurring?",
+      "answers": [
+        { "text": "Distributed denial of service attack", "correct": false },
+        { "text": "Denial of service attack.", "correct": true },
+        { "text": "Database injection attack.", "correct": false },
+        { "text": "Cross-Site scripting attack", "correct": false }
+      ],
+      "explanation": "ANSWER: C \n The log entry indicates a POST request to a suspicious path, /cgi-bin/shutdown/, which suggests that the attacker may have exploited a vulnerability or misconfiguration to send a command to shut down the web server. This kind of activity is characteristic of a Denial of Service (DoS) attack, where an attacker intentionally disrupts the availability of a service, in this case by forcing the server to shut down."
+    },
+    {
+      "question": "Which of the Enterprise Security frameworks provides additional automatic context and correlation to fields that exist within raw data?",
+      "answers": [
+        { "text": "Asset and Identity", "correct": true },
+        { "text": "Threat Intelligence", "correct": false },
+        { "text": "Adaptive Response", "correct": false },
+        { "text": "Risk", "correct": false }
+      ],
+      "explanation": "ANSWER: A \n The Asset and Identity framework in Splunk Enterprise Security enriches raw data by adding automatic context and correlation to fields like IP addresses, hostnames, and user accounts. This framework integrates asset (e.g., servers, endpoints) and identity (e.g., usernames, accounts) data, enabling analysts to better understand the entities involved in events and their relationships. It provides additional context such as asset category, priority, and user roles, which improves investigation and prioritization."
     }
   ]
   
