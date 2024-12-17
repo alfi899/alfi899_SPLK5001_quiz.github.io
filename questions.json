@@ -507,7 +507,7 @@
         { "text": "Correlation searches", "correct": false },
         { "text": "Validated architectures", "correct": true }
       ],
-      "explanation": "ANSWER: A \n The Splunk Security Content library (provided through apps like ESCU and SSE) includes components such as dashboards, reports, and correlation searches to help security teams detect, investigate, and respond to threats. These components provide practical tools and detections aligned with frameworks like MITRE ATT&CK."
+      "explanation": "ANSWER: D \n The Splunk Security Content library (provided through apps like ESCU and SSE) includes components such as dashboards, reports, and correlation searches to help security teams detect, investigate, and respond to threats. These components provide practical tools and detections aligned with frameworks like MITRE ATT&CK."
     },
     {
       "question": "The eval SPL expression supports many types of functions. Which of these function categories is not valid with eval?",
