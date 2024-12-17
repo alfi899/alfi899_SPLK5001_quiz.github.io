@@ -237,7 +237,7 @@
           { "text": "The name of a deceased individual.", "correct": false },
           { "text": "A company’s registration number.", "correct": false }
         ],
-        "explanation": "ANSWER: C \n Under the General Data Protection Regulation (GDPR), Personal Data is defined as any information relating to an identified or identifiable natural person. An individual's address combined with their first and last name qualifies as personal data because it can directly identify the person."
+        "explanation": "ANSWER: B \n Under the General Data Protection Regulation (GDPR), Personal Data is defined as any information relating to an identified or identifiable natural person. An individual's address combined with their first and last name qualifies as personal data because it can directly identify the person."
     },
     {
         "question": "What goal of an Advanced Persistent Threat (APT) group aims to disrupt or damage on behalf of a cause?",
