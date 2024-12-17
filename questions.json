@@ -107,7 +107,7 @@
           { "text": "Create another detection for this information.", "correct": false },
           { "text": "Allowlist more events based on this information.", "correct": false }
         ],
-        "explanation": "ANSWER: A \n The risk_message field in Splunk's Risk-Based Alerting framework provides context about why a risk score was assigned to an object or event. By asking the engineer to include additional information from the raw logs in the risk_message, the analyst can have easier access to the relevant data needed to determine whether the activity is malicious, without having to repeatedly search through the raw logs. This improves the efficiency and effectiveness of their analysis."
+        "explanation": "ANSWER: B \n The risk_message field in Splunk's Risk-Based Alerting framework provides context about why a risk score was assigned to an object or event. By asking the engineer to include additional information from the raw logs in the risk_message, the analyst can have easier access to the relevant data needed to determine whether the activity is malicious, without having to repeatedly search through the raw logs. This improves the efficiency and effectiveness of their analysis."
     },
     {
         "question": "What device typically sits at a network perimeter to detect command and control and other potentially suspicious traffic?",
@@ -637,7 +637,7 @@
         { "text": "Database injection attack.", "correct": false },
         { "text": "Cross-Site scripting attack", "correct": false }
       ],
-      "explanation": "ANSWER: C \n The log entry indicates a POST request to a suspicious path, /cgi-bin/shutdown/, which suggests that the attacker may have exploited a vulnerability or misconfiguration to send a command to shut down the web server. This kind of activity is characteristic of a Denial of Service (DoS) attack, where an attacker intentionally disrupts the availability of a service, in this case by forcing the server to shut down."
+      "explanation": "ANSWER: B \n The log entry indicates a POST request to a suspicious path, /cgi-bin/shutdown/, which suggests that the attacker may have exploited a vulnerability or misconfiguration to send a command to shut down the web server. This kind of activity is characteristic of a Denial of Service (DoS) attack, where an attacker intentionally disrupts the availability of a service, in this case by forcing the server to shut down."
     },
     {
       "question": "Which of the Enterprise Security frameworks provides additional automatic context and correlation to fields that exist within raw data?",
