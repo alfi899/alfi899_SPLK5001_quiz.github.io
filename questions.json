@@ -7,7 +7,7 @@
           { "text": "Threat Intelligence", "correct": false },
           { "text": "Adaptive Response", "correct": true }
         ],
-        "explanation": "ANSWER: D. Adaptive Response \n The Adaptive Response frameowrk allows for the execution of preconfigured actions, eiother within Splunk ot by integrating with external applications and tools. It enabled security teams to automate and streamline their responses to sercurity incidents, suich as quarantainging hosts, disabling accounts or notifying relevant personnel"
+        "explanation": "ANSWER: D. Adaptive Response \n The Adaptive Response framework allows for the execution of preconfigured actions, either within Splunk or by integrating with external applications and tools. It enables security teams to automate and streamline their responses to security incidents, such as quarantaining hosts, disabling accounts or notifying relevant personnel"
     },
     {
         "question": "Which of the following Splunk enterprise features allows industry frameworks such as CIS Critical Security Controls, MITTRE ATT&CK and the Lockhead Martin Cyber Kill Chain top be mapped to correlation search results?",
