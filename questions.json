@@ -517,7 +517,7 @@
         { "text": "Comparison and Conditional functions", "correct": false },
         { "text": "Threat functions", "correct": true }
       ],
-      "explanation": "ANSWER: A \n"
+      "explanation": "ANSWER: D \n There is no category called Threat functions in the eval command. Threat analysis and security-specific operations in Splunk are handled through correlation searches, security frameworks, or custom searches, not directly via eval"
     },
     {
       "question": "Which of the following is a tactic used by attackers, rather than a technique?",
